@@ -1,1 +1,39 @@
-SI_2022_LAB2_193207_ANGELA_MILKOVSKA
+Angela Milkovska 193207
+
+
+
+
+
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class lab2_siTest {
+    private <T> List<String> newArrayList(List<T> asList) {
+        return  new ArrayList<>(Arrays.asList());
+    }
+    @Test
+    void everyStatementsTest(){
+        IllegalArgumentException lp;
+
+       //1
+        lp= assertThrows(IllegalArgumentException.class, () ->SI_lab2.function(newArrayList(Arrays.asList())));
+        assertTrue(lp.getMessage().contains("List length should be greater than 0"));
+
+        //2
+        lp= assertThrows(IllegalArgumentException.class, () ->SI_lab2.function(new ArrayList(Arrays.asList("0", "0", "0","0", "0"))));
+        assertTrue(lp.getMessage().contains("List length should be a perfect square"));
+
+        //3
+        assertEquals((new ArrayList<String>(Arrays.asList("1", "#", "2", "0", "3", "#", "1", "#", "#"))),SI_lab2.function(new ArrayList<String>(Arrays.asList("0", "#", "0", "0", "0", "#", "0", "#", "#"))));
+    }
+
+
+}
+  
+  На цртежот има 45 јазли и 52 ребра. Од 52-45=7. 7+2=9
+Комплексноста е 9.
